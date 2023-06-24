@@ -55,18 +55,25 @@ adminTab.Parent = tabContainer
 hubTab.Parent = tabContainer
 scriptTab.Parent = tabContainer
 
+-- Notification function
+local function DisplayNotification(message)
+    local notification = Instance.new("TextLabel")
+    notification.Name = "Notification"
+    notification.Parent = gui
+    notification.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    notification.Size = UDim2.new(0, 200, 0, 50)
+    notification.Position = UDim2.new(0.5, -100, 0, 10)
+    notification.Font = Enum.Font.SourceSans
+    notification.Text = message
+    notification.TextColor3 = Color3.fromRGB(255, 255, 255)
+    notification.TextSize = 14
+    notification.TextWrapped = true
+    
+    wait(3) -- Change the duration as needed
+    
+    notification:Destroy()
+end
+
 -- Button functions
-adminTab.MouseButton1Click:Connect(function()
-    -- Add admin tab functionality here
-end)
-
-hubTab.MouseButton1Click:Connect(function()
-    -- Add hub tab functionality here
-end)
-
-scriptTab.MouseButton1Click:Connect(function()
-    -- Add script tab functionality here
-end)
-
--- Open the GUI
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+adminTab
