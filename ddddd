@@ -1,0 +1,72 @@
+local gui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local tabContainer = Instance.new("Frame")
+local adminTab = Instance.new("TextButton")
+local hubTab = Instance.new("TextButton")
+local scriptTab = Instance.new("TextButton")
+
+-- Modify the GUI appearance here
+gui.Name = "ScriptMonkeyHub"
+gui.DisplayOrder = 1000
+gui.ResetOnSpawn = false
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+frame.Name = "Frame"
+frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+frame.BorderSizePixel = 0
+frame.Position = UDim2.new(0.5, -150, 0.5, -150)
+frame.Size = UDim2.new(0, 300, 0, 300)
+
+tabContainer.Name = "TabContainer"
+tabContainer.BackgroundTransparency = 1
+tabContainer.Position = UDim2.new(0, 0, 0.1, 0)
+tabContainer.Size = UDim2.new(1, 0, 0.9, 0)
+
+adminTab.Name = "AdminTab"
+adminTab.BackgroundTransparency = 1
+adminTab.Size = UDim2.new(0.333, 0, 1, 0)
+adminTab.Font = Enum.Font.SourceSans
+adminTab.Text = "Admin"
+adminTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+adminTab.TextSize = 20
+
+hubTab.Name = "HubTab"
+hubTab.BackgroundTransparency = 1
+hubTab.Position = UDim2.new(0.333, 0, 0, 0)
+hubTab.Size = UDim2.new(0.333, 0, 1, 0)
+hubTab.Font = Enum.Font.SourceSans
+hubTab.Text = "Hubs"
+hubTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+hubTab.TextSize = 20
+
+scriptTab.Name = "ScriptTab"
+scriptTab.BackgroundTransparency = 1
+scriptTab.Position = UDim2.new(0.666, 0, 0, 0)
+scriptTab.Size = UDim2.new(0.333, 0, 1, 0)
+scriptTab.Font = Enum.Font.SourceSans
+scriptTab.Text = "Scripts"
+scriptTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+scriptTab.TextSize = 20
+
+-- Parenting
+frame.Parent = gui
+tabContainer.Parent = frame
+adminTab.Parent = tabContainer
+hubTab.Parent = tabContainer
+scriptTab.Parent = tabContainer
+
+-- Button functions
+adminTab.MouseButton1Click:Connect(function()
+    -- Add admin tab functionality here
+end)
+
+hubTab.MouseButton1Click:Connect(function()
+    -- Add hub tab functionality here
+end)
+
+scriptTab.MouseButton1Click:Connect(function()
+    -- Add script tab functionality here
+end)
+
+-- Open the GUI
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
